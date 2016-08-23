@@ -14,10 +14,9 @@ from DBN import test_DBN
 I found that my result was slower for the RBM
  test (151.38 compared to 122.47), but seemed faster than the DBM test result
  quoted on deeplearning.net for LISA labs (On my ThinkPad T430 I get ~1.65 mins/epoch for the
- DBN compared to 2.2 mins/epoch there). Still waiting for the full result for 
-the DBN though. 
+ DBN compared to 2.2 mins/epoch there). The pretraining ran for 871.49 m and the fine tuning ran for 226.5 m, giving a best validation and test error of 1.49% (compared to 1.27 and 1.34 respectively for lisa labs) at iteration 110000. This is slower than the 615 minutes for pretraining and 101 minutes for fine tuning reported by lisa labs. Possibly the fact that I was running this and lrn2 at the same time may have slowed it down at the end. 
 
-Started testing the default mnist_pretrain algorithm with RBMs. No results yet.
+Started testing the default mnist_pretrain algorithm from lrn2 (the one with RBMs). Each epoch takes about 97 seconds. Full training took 590.5 m. 
 '''
 if(sys.argv[1]=='rbm'): 
   test_rbm()
